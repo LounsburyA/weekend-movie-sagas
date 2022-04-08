@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
 
   const query = `SELECT * FROM movies WHERE "id" = $1`;
-  const values = [req.body.title, req.body.poster, req.body.description]
+  const values = [req.params.id]
   pool.query(query, values)
     .then(result => {
       res.send(result.rows);

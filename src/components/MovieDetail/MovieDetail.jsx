@@ -2,19 +2,24 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom'
 
-function MovieDetails(movie){
+function MovieDetail() {
 
-const dispatch= useDispatch();
-const details = useSelector(store =>store.details);
+    const dispatch = useDispatch();
+    const details = useSelector(store => store.details);
 
-const home = even => {
-    history.pushState('/')
+    const home = event => {
+        history.push('/');
+    }
+    return (
+        <>
+            <h1>Movie Info</h1>
+            <button onClick={home}>Home</button>
+            <p>{details.title}</p>
+            <img src ={details.poster}/>
+            <p>{details.description}</p>
+
+        </>
+    )
+
 }
-return(
-<>
-<h1>Movie Info</h1>
-<button onClick= {home}></button>
-</>
-)
-
- }
+export default MovieDetail;
