@@ -8,13 +8,14 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    yield takeEvery ('FETCH_DETAILS', fetchDetails)
+    yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('FETCH_GENRES', fetchGenres)
 }
 
 function* fetchDetails(action) {
@@ -27,9 +28,23 @@ function* fetchDetails(action) {
     } catch (err) {
         console.log(err);
     }
+
+}
+function* fetchGenres(action) {
+
+
+try {
+    let genre = yield axios.get(`/api/genre/${action.payload}`);
+    yield put({
+        type: 'SET_GENRES', //this dispatches a call to set state in a reducer
+        payload: genre
+    })
+} catch (err) {
+    console.log(err);
+}
 }
 
- 
+
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -60,7 +75,7 @@ const movies = (state = [], action) => {
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
-            return action.payload;
+            return action.payload.data;
         default:
             return state;
     }

@@ -10,6 +10,7 @@ function MovieItem({ movie }) {
 
     const viewDetail = ()=> {
 dispatch({type: "FETCH_DETAILS", payload: movie.id})
+dispatch({type: "FETCH_GENRES", payload: movie.id})
 history.push('/details')
     }
 
