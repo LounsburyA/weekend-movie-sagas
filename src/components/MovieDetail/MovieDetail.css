@@ -1,17 +1,30 @@
 body{
-    background-color:#333333 ;
-    color: orange;
+    background-color:#0000cc;
+    color: #ffcc00;
+    
 }
 .box{
     border: 1px solid white;
     padding: 10px;
+    background-color: #383838;
 }
 .box:hover{
     transform: scale(.99)
 }
 .poster{
     border: 1px solid white;
+    background-color: #383838;
 }
 .poster:hover{
     transform: scale(1.1)
+}
+.info{
+    font-weight: bold;
+    font-size: x-large;
+    color: orange;
+}
+.title{
+    animation-fill-mode: both;
+    border: 1px solid #ffcc00;
+
 }

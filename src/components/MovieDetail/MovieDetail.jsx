@@ -17,13 +17,16 @@ function MovieDetail() {
             <p>{details.title}</p>
             <img src={details.poster} className = "poster"/>
             <div className="deets">
+                <p className="info">Description:</p>
             <p>{details.description}</p>
             </div>
             
                 {genres.map((genre, i) => {
                     return (
-
+                        <>
+                        <p className="info">Genre:</p>
                         <p key={i}> {genre.name} </p>
+                        </>
                     )
                     })} 
             
