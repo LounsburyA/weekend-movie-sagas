@@ -13,7 +13,7 @@ function MovieDetail() {
     }
     return (
         <div>
-            <h1>About this movie!</h1>
+            <h1 ><span className='title'>About this movie</span></h1>
             <p>{details.title}</p>
             <img src={details.poster} className = "poster"/>
             <div className="deets">
@@ -21,10 +21,10 @@ function MovieDetail() {
             <p>{details.description}</p>
             </div>
             
+            <p className="info">Genre:</p>
                 {genres.map((genre, i) => {
                     return (
                         <>
-                        <p className="info">Genre:</p>
                         <p key={i}> {genre.name} </p>
                         </>
                     )

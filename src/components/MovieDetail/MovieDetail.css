@@ -21,10 +21,11 @@ body{
 .info{
     font-weight: bold;
     font-size: x-large;
-    color: orange;
+    color:#ffff80;
 }
 .title{
     animation-fill-mode: both;
-    border: 1px solid #ffcc00;
+    border: 4px solid #ffcc00;
+    padding: 5px;
 
 }
