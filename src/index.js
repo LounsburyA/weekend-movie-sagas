@@ -12,7 +12,7 @@ import { takeEvery, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import '@fontsource/roboto';
 
-// Create the rootSaga generator function
+// Create the rootSaga generator function, one for all movies, one for movie details
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
@@ -82,7 +82,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+// Used to store the movie details
 const details = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAILS':

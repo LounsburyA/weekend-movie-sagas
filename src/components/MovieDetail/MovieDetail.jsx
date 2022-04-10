@@ -11,6 +11,7 @@ function MovieDetail() {
     const home = event => {
         history.push('/');//brings back to home screen
     }
+    //displays all the movie detail information to the DOM
     return (
         <div>
             <h1 ><span className='title'>About this movie</span></h1>

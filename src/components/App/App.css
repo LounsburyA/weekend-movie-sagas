@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+/* changes padding on details page */
 .deets{
   padding-inline-end: 10em;
   padding-inline-start: 10em;

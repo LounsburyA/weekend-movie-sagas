@@ -4,6 +4,7 @@ import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail'
 import '@fontsource/roboto';
 
+// this is what is displayed to the DOM,  initial movie list page, and movie details page
 function App() {
   return (
     <div className="App">
