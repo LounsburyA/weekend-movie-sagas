@@ -9,7 +9,7 @@ router.get('/:id', (req, res) => {
   JOIN "movies" ON "movies_genres"."movie_id" = "movies"."id"
   WHERE "movies".id = $1;`;
   const values = [req.params.id]
-  pool.query(query,values)
+  pool.query(query, values)
     .then(result => {
       res.send(result.rows);
     })

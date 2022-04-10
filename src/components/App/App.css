@@ -2,7 +2,10 @@
   text-align: center;
 }
 
-
+.deets{
+  padding-inline-end: 10em;
+  padding-inline-start: 10em;
+}
 .App-header {
   background-color: #222;
   height: 150px;

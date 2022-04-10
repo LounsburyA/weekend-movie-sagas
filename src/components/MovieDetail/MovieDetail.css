@@ -1,0 +1,8 @@
+body{
+    background-color:#333333 ;
+    color: orange;
+}
+.box{
+    border: 1px solid white;
+    padding: 10px;
+}

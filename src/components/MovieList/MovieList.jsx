@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
 import './MovieList.css'
 
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import { Stack } from "@mui/material"
+
+
 function MovieList() {
 
     const dispatch = useDispatch();
@@ -14,17 +19,19 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
-            <section className="movies">
-                {movies.map((movie, i) => {
-                    return (
-                        <MovieItem
-                        key = {i}
-                        movie = {movie}
-                        />             
-                    );
-                })}
-            </section>
+            <Stack spacing={4}>
+                <h1>MovieList</h1>
+                <ImageList sx={{ width: 990, height: 500 }} cols={4} rowHeight={200}>
+                    {movies.map((movie, i) => {
+                        return (
+                            <MovieItem
+                                key={i}
+                                movie={movie}
+                            />
+                        );
+                    })}
+                </ImageList>
+            </Stack>
         </main>
     );
 }
