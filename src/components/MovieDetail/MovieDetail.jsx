@@ -9,7 +9,7 @@ function MovieDetail() {
     const details = useSelector(store => store.details);
     const genres = useSelector(store => store.genres);
     const home = event => {
-        history.push('/');
+        history.push('/');//brings back to home screen
     }
     return (
         <div>
@@ -20,7 +20,7 @@ function MovieDetail() {
                 <p className="info">Description:</p>
             <p>{details.description}</p>
             </div>
-            
+            {/* adds genres to the dom */}
             <p className="info">Genre:</p>
                 {genres.map((genre, i) => {
                     return (

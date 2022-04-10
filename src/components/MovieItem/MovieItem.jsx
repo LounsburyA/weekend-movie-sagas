@@ -14,7 +14,7 @@ dispatch({type: "FETCH_DETAILS", payload: movie.id})
 history.push('/details')
     }
 
-//
+//movies posted to dom
     return (<>
         <div key={movie.id} className= "box" >
             <h3>{movie.title}</h3>
