@@ -36,5 +36,5 @@ function MovieList() {
         </main>
     );
 }
-
+// loops and displays movie items as list
 export default MovieList;
